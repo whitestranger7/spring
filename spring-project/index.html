@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <link rel="stylesheet" href="css/header.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/modalNav.css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
+            rel="stylesheet"
+        />
+        <title>1.2 Task</title>
+    </head>
+    <body>
+        <div id="modal__nav" class="modal__nav">
+            <div class="closebtn" onclick="closeNav()">&times;</div>
+            <div class="modal__nav__wrapper">
+                <a href="#" class="modal__nav--link">
+                    <p class="modal__nav--header">Why Spring</p>
+                    <div class="modal__nav--arrow"></div>
+                </a>
+                <a href="#" class="modal__nav--link">
+                    <p class="modal__nav--header">Learn</p>
+                </a>
+                <a href="#" class="modal__nav--link">
+                    <p class="modal__nav--header">Projects</p>
+                </a>
+                <a href="#" class="modal__nav--link">
+                    <p class="modal__nav--header">Training</p>
+                </a>
+                <a href="#" class="modal__nav--link">
+                    <p class="modal__nav--header">Support</p>
+                </a>
+                <a href="#" class="modal__nav--link">
+                    <p class="modal__nav--header">Community</p>
+                </a>
+            </div>
+        </div>
+        <header id="nav">
+            <nav>
+                <div class="nav__logo">
+                    <img class="nav__logo-img" src="img/logo.png" alt="logo" />
+                </div>
+                <div class="nav__bar">
+                    <div class="dropdown">
+                        <p class="dropdown__header dropdown__header--first">Why Spring</p>
+                        <div class="dropdown__content dropdown__content--first">
+                            <ul class="dropdown__list">
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Overview</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Microservices</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Reactive</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Event Driven</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Cloud</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Web Applications</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Serverless</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Batch</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <p class="dropdown__header dropdown__header--second">Learn</p>
+                        <div class="dropdown__content dropdown__content--second">
+                            <ul class="dropdown__list">
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Overview</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Quickstart</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Guides</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Blog</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <p class="dropdown__header dropdown__header--third">Projects</p>
+                        <div class="dropdown__content dropdown__content--third">
+                            <ul class="dropdown__list">
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Overview</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Boot</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Framework</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Cloud</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Cloud Data Flow</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Data</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Integration</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Batch</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Spring Security</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="nav__link">Training</a>
+                    <a class="nav__link">Support</a>
+                    <div class="dropdown">
+                        <p class="dropdown__header dropdown__header--fourth">Community</p>
+                        <div class="dropdown__content dropdown__content--fourth">
+                            <ul class="dropdown__list">
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Overview</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Events</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Team</li></a>
+                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Store</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav__hamburger">
+                    <div class="hamburger__wrapper" onclick="openNav()">
+                        <div class="hamburger__bar"></div>
+                        <div class="hamburger__bar"></div>
+                        <div class="hamburger__bar"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="main__hero" id="main__hero">
+                <div class="hero__container">
+                    <h1>Projects</h1>
+                    <p>
+                        From configuration to security, web apps to big
+                        data—whatever the infrastructure needs of your
+                        application may be, there is a Spring Project to help
+                        you build it. Start small and use just what you
+                        need—Spring is modular by design.
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="main__content">
+                <div class="content__wrapper">
+                    <div class="content__items">
+                        <div class="content__item">
+                            <div class="item__icon">
+                                <img
+                                    src="img/spring-boot-icon.svg"
+                                    alt="boot-icon"
+                                />
+                            </div>
+                            <div class="item__description">
+                                <h1>Spring Boot</h1>
+                                <p>
+                                    Takes an opinionated view of building Spring
+                                    applications and gets you up and running as
+                                    quickly as possible.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content__item">
+                            <div class="item__icon">
+                                <img
+                                    src="img/spring-logo-icon.svg"
+                                    alt="spring-icon"
+                                />
+                            </div>
+                            <div class="item__description">
+                                <h1>Spring Framework</h1>
+                                <p>
+                                    Provides core support for dependency
+                                    injection, transaction management, web apps,
+                                    data access, messaging and more.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content__wrapper">
+                    <div class="content__items">
+                        <div class="content__item">
+                            <div class="item__icon">
+                                <img
+                                    src="img/spring-data-icon.svg"
+                                    alt="data-icon"
+                                />
+                            </div>
+                            <div class="item__description">
+                                <h1>Spring Data</h1>
+                                <p>
+                                    Provides a consistent approach to data
+                                    access – relational, non-relational,
+                                    map-reduce, and beyond.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content__item">
+                            <div class="item__icon">
+                                <img
+                                    src="img/spring-cloud-icon.svg"
+                                    alt="cloud-icon"
+                                />
+                            </div>
+                            <div class="item__description">
+                                <h1>Spring Cloud</h1>
+                                <p>
+                                    Provides a set of tools for common patterns
+                                    in distributed systems. Useful for building
+                                    and deploying microservices.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </main>
+        <script src="./js/scripts.js"></script>
+    </body>
+</html>
