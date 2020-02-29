@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/header.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/modalNav.css">
+        <link rel="stylesheet" href="css/search.css">
         <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,900&display=swap"
             rel="stylesheet"
@@ -130,80 +131,17 @@
                     </p>
                 </div>
             </div>
-            <!-- <div class="main__content">
-                <div class="content__wrapper">
-                    <div class="content__items">
-                        <div class="content__item">
-                            <div class="item__icon">
-                                <img
-                                    src="img/spring-boot-icon.svg"
-                                    alt="boot-icon"
-                                />
-                            </div>
-                            <div class="item__description">
-                                <h1>Spring Boot</h1>
-                                <p>
-                                    Takes an opinionated view of building Spring
-                                    applications and gets you up and running as
-                                    quickly as possible.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content__item">
-                            <div class="item__icon">
-                                <img
-                                    src="img/spring-logo-icon.svg"
-                                    alt="spring-icon"
-                                />
-                            </div>
-                            <div class="item__description">
-                                <h1>Spring Framework</h1>
-                                <p>
-                                    Provides core support for dependency
-                                    injection, transaction management, web apps,
-                                    data access, messaging and more.
-                                </p>
-                            </div>
-                        </div>
+            <div class="main__wrapper">
+                <div class="search__container" id="search__container">
+                    <div class="search__input__wrapper" id="search__input__wrapper">
+                        <input class="search__input" id="search__input" type="text" placeholder="Search..." onkeyup="search()" onclick="resultNothing()">
+                    </div>
+                    <div class="search__nothing" id="search__nothing">
+                        <p class="search__nothing--text">Nothing matches...</p>
                     </div>
                 </div>
-                <div class="content__wrapper">
-                    <div class="content__items">
-                        <div class="content__item">
-                            <div class="item__icon">
-                                <img
-                                    src="img/spring-data-icon.svg"
-                                    alt="data-icon"
-                                />
-                            </div>
-                            <div class="item__description">
-                                <h1>Spring Data</h1>
-                                <p>
-                                    Provides a consistent approach to data
-                                    access – relational, non-relational,
-                                    map-reduce, and beyond.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content__item">
-                            <div class="item__icon">
-                                <img
-                                    src="img/spring-cloud-icon.svg"
-                                    alt="cloud-icon"
-                                />
-                            </div>
-                            <div class="item__description">
-                                <h1>Spring Cloud</h1>
-                                <p>
-                                    Provides a set of tools for common patterns
-                                    in distributed systems. Useful for building
-                                    and deploying microservices.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+
+            </div>
         </main>
         <script src="./js/scripts.js"></script>
     </body>
