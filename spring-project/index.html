@@ -25,26 +25,90 @@
     <body>
         <div id="modal__nav" class="modal__nav">
             <div class="closebtn" onclick="closeNav()">&times;</div>
-            <div class="modal__nav__wrapper">
-                <a href="#" class="modal__nav--link">
-                    <p class="modal__nav--header">Why Spring</p>
-                    <div class="modal__nav--arrow"></div>
-                </a>
-                <a href="#" class="modal__nav--link">
-                    <p class="modal__nav--header">Learn</p>
-                </a>
-                <a href="#" class="modal__nav--link">
-                    <p class="modal__nav--header">Projects</p>
-                </a>
-                <a href="#" class="modal__nav--link">
-                    <p class="modal__nav--header">Training</p>
-                </a>
-                <a href="#" class="modal__nav--link">
-                    <p class="modal__nav--header">Support</p>
-                </a>
-                <a href="#" class="modal__nav--link">
-                    <p class="modal__nav--header">Community</p>
-                </a>
+            <div class="modal__nav__container">
+                <div class="modal__nav__wrapper">
+                    <div class="modal__nav--header">
+                        <p class="modal__nav--mainText">Why Spring</p>
+                        <div class="modal__nav__arrow--wrapper" onclick="closeModal(0)">
+                            <div class="modal__nav--arrow"></div>
+                        </div>
+                    </div>
+                    <div class="modal__nav__listContainer">
+                        <ul class="modal__nav__listWrapper">
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Overview</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Microservices</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Reactive</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Event Driven</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Cloud</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Web Applications</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Serverless</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Batch</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal__nav__wrapper">
+                    <div class="modal__nav--header">
+                        <p class="modal__nav--mainText">Learn</p>
+                        <div class="modal__nav__arrow--wrapper" onclick="closeModal(1)">
+                            <div class="modal__nav--arrow"></div>
+                        </div>
+                    </div>
+                    <div class="modal__nav__listContainer">
+                        <ul class="modal__nav__listWrapper">
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Overview</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Quickstart</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Guides</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal__nav__wrapper">
+                    <div class="modal__nav--header">
+                        <p class="modal__nav--mainText">Projects</p>
+                        <div class="modal__nav__arrow--wrapper" onclick="closeModal(2)">
+                            <div class="modal__nav--arrow"></div>
+                        </div>
+                    </div>
+                    <div class="modal__nav__listContainer">
+                        <ul class="modal__nav__listWrapper">
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Overview</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Boot</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Framework</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Cloud</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Cloud Data Flow</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Data</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Integration</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Batch</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Spring Security</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">View All Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal__nav__wrapper">
+                    <div class="modal__nav--header">
+                        <p class="modal__nav--mainText">Training</p>
+                    </div>
+                </div>
+                <div class="modal__nav__wrapper">
+                    <div class="modal__nav--header">
+                        <p class="modal__nav--mainText">Support</p>
+                    </div>
+                </div>
+                <div class="modal__nav__wrapper">
+                    <div class="modal__nav--header">
+                        <p class="modal__nav--mainText">Community</p>
+                        <div class="modal__nav__arrow--wrapper" onclick="closeModal(5)">
+                            <div class="modal__nav--arrow"></div>
+                        </div>
+                    </div>
+                    <div class="modal__nav__listContainer">
+                        <ul class="modal__nav__listWrapper">
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Overview</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Events</a></li>
+                            <li class="modal__nav--listElement"><a href="modal__listElement--link">Team</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <header id="nav">
@@ -57,14 +121,14 @@
                         <p class="dropdown__header dropdown__header--first">Why Spring</p>
                         <div class="dropdown__content dropdown__content--first">
                             <ul class="dropdown__list">
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Overview</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Microservices</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Reactive</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Event Driven</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Cloud</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Web Applications</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Serverless</li></a>
-                                <a class="dropdown__item--link" href="#"><li class="dropdown__item">Batch</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Overview</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Microservices</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Reactive</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Event Driven</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Cloud</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Web Applications</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Serverless</li></a>
+                                <a class="dropdown__item--link" href="#"><li>Batch</li></a>
                             </ul>
                         </div>
                     </div>
@@ -137,7 +201,7 @@
                         <input class="search__input" id="search__input" type="text" placeholder="Search..." onkeyup="search()" onclick="resultNothing()">
                     </div>
                     <div class="search__nothing" id="search__nothing">
-                        <p class="search__nothing--text">Nothing matches...</p>
+                        <p class="search__nothing--text">No results...</p>
                     </div>
                 </div>
 

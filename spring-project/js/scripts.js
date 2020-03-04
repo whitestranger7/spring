@@ -26,6 +26,13 @@ let items = [
         header: 'Spring Cloud',
         description:
             'Provides a set of tools for common patterns in distributed systems. Useful for building and deploying microservices.'
+    },
+    {
+        img: 'img/spring-cloud-icon.svg',
+        alt: 'cloud-icon',
+        header: 'Spring Cloud',
+        description:
+            'Provides a set of tools for common patterns in distributed systems. Useful for building and deploying microservices.'
     }
 ];
 
@@ -36,7 +43,7 @@ const init = function() {
     allContent.classList.add('main__content');
     wrapper.classList.add('content__wrapper');
     itemsContainer.classList.add('content__items');
-    let allItems = items.map(el => {
+    let allItems = items.map((el, index) => {
         let item = document.createElement('div');
         let itemIcon = document.createElement('div');
         let itemIconImg = document.createElement('img');
@@ -70,6 +77,7 @@ const init = function() {
         if(i == allItems.length - 1 && i % 2 == 0) {
             wrappersBlock.appendChild(itemsBlock);
             allContent.appendChild(wrappersBlock);
+            wrappersBlock.firstChild.classList.add('content__items--single');
         }
     }
     document.getElementById('search__container').insertAdjacentElement('afterend', allContent);
@@ -78,8 +86,8 @@ const init = function() {
 function openNav() {
     let modalNav = document.getElementById('modal__nav');
     let navBar = document.getElementById('nav');
-    modalNav.style.display = 'block';
     modalNav.style.height = '100%';
+    modalNav.style.display = 'block';
     navBar.style.display = 'none';
 }
 
@@ -87,6 +95,7 @@ function closeNav() {
     let modalNav = document.getElementById('modal__nav');
     let navBar = document.getElementById('nav');
     modalNav.style.height = '0';
+    modalNav.style.removeProperty('display');
     navBar.style.removeProperty('display');
 }
 
@@ -131,13 +140,19 @@ function search() {
         //     header = li[0].innerText;
         //     console.log(li)
         // }
+        let resultArray = [];
         for (let i = 0; i < li.length; i++) {
             header = li[i].textContent || li[i].innerText;
             if(header.toLowerCase().indexOf(searchValue) !== -1) {
-                li[i].style.display = 'block';
+                li[i].style.display = 'flex';
+                resultArray.push(li[i]);
             }else {
                 li[i].style.display = 'none';
             }
+        }
+        if(resultArray.length == 0) {
+            nothingMatches.style.display = 'flex';
+            searchResultWrapper.style.display = 'none';
         }
     }
 };
@@ -149,6 +164,19 @@ function resultNothing() {
     if(searchValue === '') {
         nothingMatches.style.display = 'flex';
         searchList.style.display = 'none';
+    }
+}
+
+function closeModal(index) {
+    let change = document.getElementsByClassName('modal__nav__wrapper');
+    let btn = change[index].firstElementChild;
+    let list = change[index].lastElementChild;
+    if (btn.classList.value.includes('active')){
+        btn.classList.toggle('active');
+        list.style.display = 'none';
+    } else {
+        btn.classList.toggle('active');
+        list.style.display = 'block';
     }
 }
 
