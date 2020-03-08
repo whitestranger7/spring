@@ -33,6 +33,13 @@ let items = [
         header: 'Spring Cloud',
         description:
             'Provides a set of tools for common patterns in distributed systems. Useful for building and deploying microservices.'
+    },
+    {
+        img: 'img/spring-cloud-icon.svg',
+        alt: 'cloud-icon',
+        header: 'Spring Cloud',
+        description:
+            'Provides a set of tools for common patterns in distributed systems. Useful for building and deploying microservices.'
     }
 ];
 
@@ -91,12 +98,21 @@ function openNav() {
     navBar.style.display = 'none';
 }
 
+const navOpenEventListener = () => {
+    let modalNav = document.getElementById('modal__nav');
+    let navBar = document.getElementById('nav');
+    modalNav.addEventListener('transitionend', () => {
+        navBar.removeAttribute('style');
+        modalNav.removeEventListener('transitionend', this);
+    });
+}
+
 function closeNav() {
     let modalNav = document.getElementById('modal__nav');
     let navBar = document.getElementById('nav');
     modalNav.style.height = '0';
     modalNav.style.removeProperty('display');
-    navBar.style.removeProperty('display');
+    navOpenEventListener();
 }
 
 function fillSearch() {

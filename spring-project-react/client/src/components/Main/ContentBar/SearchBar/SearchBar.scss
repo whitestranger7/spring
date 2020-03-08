@@ -1,0 +1,43 @@
+.search__container {
+    padding: 20px 0;
+}
+
+.search__input__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+}
+
+.search__input {
+    width: 70%;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.search__nothing--wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.search__nothing {
+    display: flex;
+    width: 70%;
+    justify-content: flex-start;
+}
+
+.search__items--wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.search__items--container {
+    width: 72%;
+}
+
+.search__items {
+    list-style: none;
+    padding: 0;
+    border: 1px solid rgb(148, 148, 148);
+}

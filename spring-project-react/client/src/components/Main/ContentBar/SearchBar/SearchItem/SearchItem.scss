@@ -1,0 +1,22 @@
+.search__item--link {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: .3s background-color;
+    &:not(:last-child) {
+        border-bottom: 1px solid rgb(148, 148, 148)
+    }
+    &:hover {
+        background-color: #83ce5b;
+        color: #fff;
+    }
+}
+
+.search__item {
+    & p {
+        margin: 0;
+    }
+}

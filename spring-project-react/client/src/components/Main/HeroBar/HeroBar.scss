@@ -1,0 +1,40 @@
+.main__hero {
+    padding: 90px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+    & h1,
+    & p {
+        font-family: 'Muli', sans-serif;
+        text-align: left;
+        margin: 0;
+    };
+    & h1 {
+        font-weight: 900;
+        font-size: 60px;
+        margin-bottom: 25px;
+    };
+    & p {
+        font-weight: 300;
+        font-size: 25px;
+        line-height: 1.8;
+    }
+}
+
+@media(max-width: 1300px) {
+    .hero__container {
+        flex-basis: 90%;
+    }
+}
+
+@media(max-width: 1000px) {
+    .hero__container {
+        flex-basis: 95%;
+    }
+}
