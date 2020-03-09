@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './NavBar';
 
-const dropdown = props => {
+const Dropdown = props => {
+
+    const [hover, setHover] = useState(false);
+
+    const hoverHandlerEnter = () => {
+        setHover(true);
+    };
+
+    const hoverHandlerLeave = () => {
+        setHover(false);
+    };
+
     let dropdownList = null;
     if (props.list) {
         dropdownList = (
-            <div className='dropdown__content'>
+            <div className='dropdown__content' style={hover ? {display: 'block'} : {display: 'none'}}>
                 <ul className='dropdown__list'>
                     {props.list.map((el, index) => {
                         return (
@@ -18,10 +29,10 @@ const dropdown = props => {
                 </ul>
             </div>
         );
-    }
+    };
 
     return props.list ? (
-        <div className='dropdown'>
+        <div className='dropdown' onMouseEnter={hoverHandlerEnter} onMouseLeave={hoverHandlerLeave} >
             <p className='dropdown__header'>{props.title}</p>
             {dropdownList}
         </div>
@@ -30,4 +41,4 @@ const dropdown = props => {
     );
 };
 
-export default dropdown;
+export default Dropdown;

@@ -1,3 +1,5 @@
+@import '../../config/variables';
+
 @media(min-width: 901px) {
     .modal__nav {
         display: none;
@@ -29,7 +31,7 @@
     .closebtn {
         text-decoration: none;
         font-size: 28px;
-        color: #fff;
+        color: $white;
         display: block;
         transition: 0.3s;
         cursor: default;
@@ -44,7 +46,7 @@
 
     .modal__nav--header {
         text-decoration: none;
-        color: #fff;
+        color: $white;
         height: 50px;
         border-bottom: 1px solid rgb(102, 102, 102);
     }
@@ -107,6 +109,6 @@
     }
 
     .modal__nav--listElement a:hover {
-        color: #6db33f;
+        color: $green;
     }
 }

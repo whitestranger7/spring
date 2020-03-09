@@ -1,3 +1,5 @@
+@import '../../config/variables';
+
 header {
     height: 74px;
     border-bottom: 1px solid rgb(240, 240, 240);
@@ -39,7 +41,7 @@ nav {
 }
 
 .hamburger__wrapper:hover .hamburger__bar {
-    background-color: #6db33f;
+    background-color: $green;
 }
 
 .hamburger__bar {
@@ -63,7 +65,7 @@ nav {
         position: fixed;
         width: 100%;
         z-index: 1;
-        background-color: #fff;
+        background-color: $white;
     }
 
     .nav__hamburger {
