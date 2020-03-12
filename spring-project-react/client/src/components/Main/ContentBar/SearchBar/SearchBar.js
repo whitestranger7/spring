@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 import './SearchBar.scss';
 
-import { itemList } from './../../../../config/constants';
 import SearchItem from './SearchItem/SearchItem';
 
-const SearchBar = () => {
+const SearchBar = ({ itemList }) => {
     const [searchData, setSearchData] = useState({
         inputValue: '',
         matchItems: []
     });
 
-    const [inputValue, matchItems] = [searchData.inputValue, searchData.matchItems];
+    const [inputValue, matchItems] = [
+        searchData.inputValue,
+        searchData.matchItems
+    ];
 
-    const searchHandler = (e) => {
+    const searchHandler = e => {
         const newMatchItems = itemList.filter(el => {
-            return el.header.toLowerCase().includes(e.target.value.toLowerCase());
+            return el.header
+                .toLowerCase()
+                .includes(e.target.value.toLowerCase());
         });
-        setSearchData({inputValue: e.target.value, matchItems: newMatchItems});
+        setSearchData({
+            inputValue: e.target.value,
+            matchItems: newMatchItems
+        });
     };
 
     return (
@@ -27,7 +35,7 @@ const SearchBar = () => {
                     className='search__input'
                     type='text'
                     placeholder='Search...'
-                    onChange={(e) => searchHandler(e)}
+                    onChange={e => searchHandler(e)}
                 />
             </div>
             {inputValue === '' || matchItems.length === 0 ? (
@@ -36,17 +44,30 @@ const SearchBar = () => {
                         <p className='search__nothing--text'>No results...</p>
                     </div>
                 </div>
-            ) : (<div className='search__items--wrapper'>
+            ) : (
+                <div className='search__items--wrapper'>
                     <div className='search__items--container'>
                         <ul className='search__items'>
                             {matchItems.map((el, index) => {
-                                return <SearchItem key={index} header={el.header} />
+                                return (
+                                    <SearchItem
+                                        key={index}
+                                        header={el.header}
+                                    />
+                                );
                             })}
                         </ul>
                     </div>
-                </div>)}
+                </div>
+            )}
         </div>
     );
 };
 
-export default SearchBar;
+const mapStateToProps = state => {
+    return {
+        itemList: state.itemList
+    };
+};
+
+export default connect(mapStateToProps)(SearchBar);

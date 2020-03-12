@@ -5,7 +5,7 @@ import NavLogo from './NavLogo';
 import NavBar from './NavBar/NavBar';
 import NavHamburger from './NavHamburger';
 
-const header = props => {
+const Header = props => {
     return (
         <header id='nav'>
             <nav>
@@ -17,4 +17,4 @@ const header = props => {
     )
 };
 
-export default header;
+export default Header;

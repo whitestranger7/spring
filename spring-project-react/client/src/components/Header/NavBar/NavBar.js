@@ -1,18 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './NavBar.scss';
 import Dropdown from './Dropdown';
-import { navigationItems } from './../../../config/constants';
 
-const navBar = () => {
+const navBar = ({ navList }) => {
 
     return (
         <div className='nav__bar'>
-            {navigationItems.map((el, index) => {
+            {navList.map((el, index) => {
                 return <Dropdown key={index} title={el.title} list={el.list} />
             })}
         </div>
     )
 };
 
-export default navBar;
+const mapStateToProps = state => {
+    return {
+        navList: state.navList
+    }
+}
+
+export default connect(mapStateToProps)(navBar);

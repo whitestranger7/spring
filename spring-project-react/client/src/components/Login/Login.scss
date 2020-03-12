@@ -1,0 +1,53 @@
+@import './../../config/variables.scss';
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+}
+
+.username__container,
+.password__container,
+.btn__container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.username__input,
+.password__input {
+    width: 20%;
+    height: 25px;
+    padding: 0 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.password__input {
+    margin-left: 25px;
+}
+
+.username__input {
+    margin-left: 20px;
+}
+
+.btn__submit {
+    padding: 10px 40px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: $green;
+    font-size: 17px;
+    color: $white;
+    letter-spacing: 2px;
+    transition: .2s all;
+    &:hover {
+        box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.73);
+        transform: translate(2px, -2px);
+    }
+    &:active {
+        transform: translate(0, 0);
+    }
+}

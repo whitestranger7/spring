@@ -4,7 +4,7 @@ import './Main.scss';
 import HeroBar from './HeroBar/HeroBar';
 import ContentBar from './ContentBar/ContentBar';
 
-const main = () => {
+const Main = () => {
     return (
         <main>
             <HeroBar />
@@ -13,4 +13,4 @@ const main = () => {
     )
 };
 
-export default main;
+export default Main;

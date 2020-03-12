@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-import './App.scss';
-
 import Modal from '../Modal/Modal';
-import Header from './../Header/Header';
-import Main from './../Main/Main';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
 
-function App() {
+function Home() {
 
     const [mobileModal, setMobileModal] = useState(false);
 
@@ -15,11 +13,11 @@ function App() {
     };
 
     return (
-        <div className='App'>
+        <div className='Home'>
             {mobileModal ? <Modal mobile={mobileModalHandler} /> : <Header mobile={mobileModalHandler} />}
             <Main />
         </div>
     );
 }
 
-export default App;
+export default Home;

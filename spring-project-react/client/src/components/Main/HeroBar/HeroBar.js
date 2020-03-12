@@ -3,7 +3,7 @@ import React from 'react';
 import './HeroBar.scss';
 import { heroBarObj } from './../../../config/constants';
 
-const heroBar = () => {
+const HeroBar = () => {
     return (
         <div className='main__hero' id='main__hero'>
             <div className='hero__container'>
@@ -14,4 +14,4 @@ const heroBar = () => {
     );
 };
 
-export default heroBar;
+export default HeroBar;

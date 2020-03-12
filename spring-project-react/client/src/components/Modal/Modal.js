@@ -1,18 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Modal.scss';
-import { navigationItems } from '../../config/constants';
 import ModalDropdown from './ModalDropdown';
 
-const Modal = props => {
+const Modal = ({ navList, mobile }) => {
     return (
         <div className='modal__nav'>
-            <div className="closebtn" onClick={props.mobile}>&times;</div>
-            {navigationItems.map((el, index) => {
+            <div className="closebtn" onClick={mobile}>&times;</div>
+            {navList.map((el, index) => {
                 return <ModalDropdown key={index} header={el.title} list={el.list}/>
             })}
         </div>
     )
 };
 
-export default Modal;
+const mapStateToProps = state => {
+    return {
+        navList: state.navList
+    }
+}
+
+export default connect(mapStateToProps)(Modal);
