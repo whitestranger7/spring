@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import Modal from '../Modal/Modal';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 
-function Home() {
+import { fillListUp } from '../../store/actions/itemList';
+
+const Home = ({ fillListUp }) => {
 
     const [mobileModal, setMobileModal] = useState(false);
+
+    useEffect(() => {
+        fillListUp();
+    }, [])
 
     const mobileModalHandler = () => {
         mobileModal ? setMobileModal(false) : setMobileModal(true);
@@ -20,4 +27,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default connect(null, { fillListUp })(Home);

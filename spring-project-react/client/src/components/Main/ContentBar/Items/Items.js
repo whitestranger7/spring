@@ -6,6 +6,8 @@ import Item from './Item/Item';
 
 const Items = ({ itemList }) => {
 
+    console.log(itemList);
+
     return (
         <div className='main__content'>
             {itemList.map((el, index) => {
