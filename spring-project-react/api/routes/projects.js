@@ -15,6 +15,7 @@ const router = express.Router();
 
 const projectsList = [
     {
+        // img: 'https://upload.wikimedia.org/wikipedia/en/1/19/Batman_%28circa_2016%29.png',
         alt: 'boot-icon',
         header: 'Spring Boot',
         description:
@@ -41,28 +42,19 @@ const projectsList = [
 ];
 
 router.get('/list', (req, res) => {
-    if (projectsList.length > 0) {
-        res.status(200).send(projectsList);
-    } else {
-        res.status(404).send("There's no items");
-    }
-});
 
-router.get('/search', (req, res) => {
-    
     if(req.query.search) {
-        if(projectsList.length > 0) {
-            const matchItems = projectsList.filter(el => {
-                return el.header.toLowerCase().includes(req.query.search.toLowerCase());
-            });
-            
-            res.status(200).send(matchItems);
-        }else {
-            res.status(404).send("There's no items")
+        const matchItems = projectsList.filter(el => {
+            return el.header.toLowerCase().includes(req.query.search.toLowerCase());
+        })
+        res.status(200).send(matchItems);
+    }else {
+        if (projectsList.length > 0) {
+            res.status(200).send(projectsList);
+        } else {
+            res.status(404).send("There's no items");
         }
     }
-
-    res.status(400).send('You must provide additional query');
 
 });
 

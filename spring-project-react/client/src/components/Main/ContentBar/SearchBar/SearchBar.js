@@ -1,31 +1,25 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import axios from 'axios';
 
 import './SearchBar.scss';
-
 import SearchItem from './SearchItem/SearchItem';
 
-const SearchBar = ({ itemList }) => {
+const SearchBar = () => {
     const [searchData, setSearchData] = useState({
-        inputValue: '',
         matchItems: []
     });
 
-    const [inputValue, matchItems] = [
-        searchData.inputValue,
-        searchData.matchItems
-    ];
+    const { inputValue, matchItems } = searchData;
 
-    const searchHandler = e => {
-        const newMatchItems = itemList.filter(el => {
-            return el.header
-                .toLowerCase()
-                .includes(e.target.value.toLowerCase());
-        });
-        setSearchData({
-            inputValue: e.target.value,
-            matchItems: newMatchItems
-        });
+    const searchHandler = async e => {
+        try {
+            const result = await axios.get(`/list?search=${e.target.value}`);
+            setSearchData({
+                matchItems: result.data
+            })
+        } catch (err) {
+            console.log('error');
+        }
     };
 
     return (
@@ -48,7 +42,7 @@ const SearchBar = ({ itemList }) => {
                 <div className='search__items--wrapper'>
                     <div className='search__items--container'>
                         <ul className='search__items'>
-                            {matchItems.map((el, index) => {
+                            {searchData.matchItems.map((el, index) => {
                                 return (
                                     <SearchItem
                                         key={index}
@@ -64,10 +58,4 @@ const SearchBar = ({ itemList }) => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        itemList: state.itemList
-    };
-};
-
-export default connect(mapStateToProps)(SearchBar);
+export default SearchBar;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import './Login.scss';
-import loginRequest from '../../middleware/loginRequest';
 
 const Login = props => {
 
@@ -15,23 +15,20 @@ const Login = props => {
     const dataHandler = e => {
         setData({ ...data, [e.target.name]: e.target.value });
     };
-
+    
     const submitHandler = async e => {
         e.preventDefault();
 
         try {
-            const result = await loginRequest({ username, password });
-            result.onload = () => {
-                if(result.status === 202){
-                    props.history.push('/');
-                }else {
-                    console.log(result.response);
-                }
+            const result = await axios.post('/login', { username, password });
+            if(result.status === 202) {
+                props.history.push('/')
+            }else {
+                alert('Invalid data');
             }
         } catch (err) {
-            console.error(err);
+            console.error('Unable to authorize');
         }
-        
     }
 
     return (
