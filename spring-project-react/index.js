@@ -7,6 +7,7 @@ const projectsRouter = require('./api/routes/projects');
 const app = express();
 
 app.use(cors());
+app.use(express.static('config'));
 app.use(express.json());
 app.use(loginRouter);
 app.use(projectsRouter);

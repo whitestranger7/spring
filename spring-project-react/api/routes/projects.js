@@ -1,39 +1,31 @@
-// import bootIcon from './img/spring-boot-icon.svg';
-// import springIcon from './img/spring-logo-icon.svg';
-// import dataIcon from './img/spring-data-icon.svg';
-// import cloudIcon from './img/spring-cloud-icon.svg';
-
-//icons
-// const bootIcon = require('../../client/src/config/img/spring-boot-icon.svg');
-// const springIcon = require('../../client/src/config/img/spring-logo-icon.svg');
-// const dataIcon = require('../../client/src/config/img/spring-data-icon.svg');
-// const cloudIcon = require('../../client/src/config/img/spring-cloud-icon.svg');
-
 const express = require('express');
 
 const router = express.Router();
 
 const projectsList = [
     {
-        // img: 'https://upload.wikimedia.org/wikipedia/en/1/19/Batman_%28circa_2016%29.png',
+        img: 'img/spring-boot-icon.svg',
         alt: 'boot-icon',
         header: 'Spring Boot',
         description:
             'Takes an opinionated view of building Spring applications and gets you up and running as quickly as possible.'
     },
     {
+        img: 'img/spring-logo-icon.svg',
         alt: 'spring-icon',
         header: 'Spring Framework',
         description:
             'Provides core support for dependency injection, transaction management, web apps, data access, messaging and more.'
     },
     {
+        img: 'img/spring-data-icon.svg',
         alt: 'data-icon',
         header: 'Spring Data',
         description:
             'Provides a consistent approach to data access – relational, non-relational, map-reduce, and beyond.'
     },
     {
+        img: 'img/spring-cloud-icon.svg',
         alt: 'cloud-icon',
         header: 'Spring Cloud',
         description:
@@ -55,7 +47,6 @@ router.get('/list', (req, res) => {
             res.status(404).send("There's no items");
         }
     }
-
 });
 
 module.exports = router;
