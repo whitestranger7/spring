@@ -7,9 +7,11 @@ const connection = mysql.createConnection({
     database: 'spring'
 });
 
-module.exports = connection.connect((err) => {
+const db = connection.connect((err) => {
     if(err) {
         console.log(err.stack);
     }
     console.log('Database connected');
 });
+
+module.exports = connection;
