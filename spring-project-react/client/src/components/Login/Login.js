@@ -42,7 +42,7 @@ const Login = props => {
                 <input className='password__input' type='password' id='password' name='password' onChange={dataHandler} />
             </div>
             <div className='btn__container'>
-                <button type='submit' className='btn__submit'>Submit</button>
+                <button type='submit' className='btn__submit'>Log in</button>
             </div>
         </form>
     );

@@ -1,16 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const db = require('./db');
 
-const loginRouter = require('./api/routes/login');
-const projectsRouter = require('./api/routes/projects');
+const usersRouter = require('./api/routes/users');
+const itemsRouter = require('./api/routes/items');
 
 const app = express();
+db;
 
 app.use(cors());
 app.use(express.static('config'));
 app.use(express.json());
-app.use(loginRouter);
-app.use(projectsRouter);
+app.use(usersRouter);
+app.use(itemsRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, (req, res) => {
