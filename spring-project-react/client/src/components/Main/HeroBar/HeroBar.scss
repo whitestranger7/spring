@@ -1,5 +1,5 @@
 .main__hero {
-    padding: 90px 0;
+    padding: 0 0 90px 0;
     display: flex;
     justify-content: center;
     position: relative;
@@ -36,5 +36,11 @@
 @media(max-width: 1000px) {
     .hero__container {
         flex-basis: 95%;
+    }
+}
+
+@media(max-width: 900px) {
+    .main__hero{
+        padding: 90px 0;
     }
 }

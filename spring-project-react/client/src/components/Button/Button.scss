@@ -1,0 +1,25 @@
+@import '../../config/variables.scss';
+
+.btn__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__submit {
+    padding: 10px 50px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: $green;
+    font-size: 17px;
+    color: $white;
+    letter-spacing: 2px;
+    transition: .2s all;
+    &:hover {
+        box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.73);
+        transform: translate(2px, -2px);
+    }
+    &:active {
+        transform: translate(0, 0);
+    }
+}

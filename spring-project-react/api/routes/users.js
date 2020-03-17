@@ -1,5 +1,7 @@
 const express = require('express');
 const db = require('../../db');
+const jwt = require('jsonwebtoken');
+const auth = require('../../middleware/auth');
 
 const router = express.Router();
 
@@ -10,9 +12,17 @@ router.post('/signup', async (req, res) => {
     
     try {
         await db.query(`INSERT INTO users VALUES ?`, [user], (error, result, fields) => {
-            if (error) return { error: 'Server Error' };
-            res.send(req.body);
+            if (error) throw new Error('DB error');
         });
+
+        jwt.sign({ username },
+            'spring',
+            { expiresIn: 36000 },
+            (error, token) => {
+                if(error) throw new Error('JWT Error');
+                res.status(200).send({token});
+        });
+
     } catch (error) {
         res.status(404).send({error: 'Server Error'});
     }

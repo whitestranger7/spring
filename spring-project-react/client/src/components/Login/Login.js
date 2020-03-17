@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 import './Login.scss';
+import Button from '../Button/Button';
+import InputField from '../InputField/InputField';
 
 const Login = props => {
 
@@ -31,33 +33,13 @@ const Login = props => {
         }
     }
 
+    console.log(data);
+
     return (
         <form className='form__container' onSubmit={submitHandler}>
-            <div className='field__container'>
-                <div className='label__wrapper'>
-                    <label>Username:</label>
-                </div>
-                <div className='input__wrapper'>
-                    <input className='username__input' type='text' id='username' name='username' onChange={dataHandler} />
-                </div>
-                <div className='input__helper--text'>
-                    <p>Invalid username</p>
-                </div>
-            </div>
-            <div className='field__container'>
-                <div className='label__wrapper'>
-                    <label>Password:</label>
-                </div>
-                <div className='input__wrapper'>
-                    <input className='password__input' type='password' id='password' name='password' onChange={dataHandler} />
-                </div>
-                <div className='input__helper--text'>
-                    <p>Invalid password</p>
-                </div>
-            </div>
-            <div className='btn__container'>
-                <button type='submit' className='btn__submit'>Log in</button>
-            </div>
+            <InputField name='username' type='text' onChange={dataHandler} />
+            <InputField name='password' type='password' onChange={dataHandler} />
+            <Button type='submit' text='Login' />
         </form>
     );
 };
