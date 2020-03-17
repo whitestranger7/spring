@@ -1,4 +1,4 @@
-import { REGISTER_USER, LOGIN_USER } from '../actions/types';
+import { REGISTER_USER, LOGIN_USER, LOGOUT_USER } from '../actions/types';
 
 const initialState = {
     token: null,
@@ -14,6 +14,11 @@ export default function(state = initialState, action) {
             return {
                 token: payload,
                 isAuthenticated: true
+            }
+        case LOGOUT_USER:
+            return{
+                token: null,
+                isAuthenticated: false
             }
         default:
             return state;

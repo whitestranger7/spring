@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER } from './types';
+import { REGISTER_USER, LOGOUT_USER } from './types';
 import axios from 'axios';
 
 export const registerUser = (body) => async dispatch => {
@@ -22,4 +22,10 @@ export const registerUser = (body) => async dispatch => {
         console.log(error);
     }
 
+};
+
+export const logoutUser = () => dispatch => {
+    dispatch({
+        type: LOGOUT_USER
+    })
 };
