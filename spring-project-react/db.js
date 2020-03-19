@@ -1,17 +1,17 @@
-const mysql = require('mysql');
+const sequelize = require('./sequelize');
+require('./models/User');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123456',
-    database: 'spring'
-});
-
-const db = connection.connect((err) => {
-    if(err) {
-        console.log(err.stack);
+const dbInit = async () => {
+    try {
+        await sequelize.sync({
+            logging: console.log,
+            force: true
+        });
+        // await sequelize.authenticate();
+        console.log('DB working fine');
+    } catch (error) {
+        console.log('DB is broken');
     }
-    console.log('Database connected');
-});
+};
 
-module.exports = connection;
+dbInit();

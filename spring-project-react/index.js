@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('./db');
 
 const usersRouter = require('./api/routes/users');
 const itemsRouter = require('./api/routes/items');

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import './Login.scss';
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
-const Login = props => {
+import { loginUser } from '../../store/actions/auth';
+
+const Login = ({ history, loginUser, isAuth }) => {
 
     const [data, setData] = useState({
         username: '',
@@ -21,10 +24,26 @@ const Login = props => {
     const submitHandler = async e => {
         e.preventDefault();
 
+        // const body = JSON.stringify({
+        //     username,
+        //     password
+        // });
+
+        // try {
+        //     if (!isAuth) {
+        //         await loginUser(body);
+        //         history.push('/');
+        //     } else {
+        //         alert('User already loaded, please log out');
+        //     }
+        // } catch (err) {
+        //     console.log(err);
+        // }
+
         try {
             const result = await axios.post('/login', { username, password });
             if(result.status === 202) {
-                props.history.push('/')
+                history.push('/')
             }else {
                 alert('Invalid data');
             }
@@ -44,4 +63,10 @@ const Login = props => {
     );
 };
 
-export default Login;
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.isAuthenticated
+    };
+};
+
+export default connect(mapStateToProps, { loginUser })(Login);

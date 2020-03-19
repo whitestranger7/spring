@@ -89,8 +89,13 @@ const SignUp = ({ history, isAuth, registerUser }) => {
 
         try {
             if (!isAuth) {
-                await registerUser(body);
-                history.push('/');
+                const result = await registerUser(body);
+                if(!result){
+                    alert('Invalid Credentials')
+                }else {
+                    history.push('/');
+                    alert('User was created');
+                }
             } else {
                 alert('user already loaded');
             }
