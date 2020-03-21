@@ -97,7 +97,7 @@ const SignUp = ({ history, isAuth, registerUser }) => {
                     alert('User was created');
                 }
             } else {
-                alert('user already loaded');
+                alert('User already loaded');
             }
         } catch (err) {
             console.log(err);

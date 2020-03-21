@@ -33,15 +33,15 @@ export const loginUser = (body) => async dispatch => {
 
     try {
         const result = await axios.post('/login', body, config);
-        if(result.status === 200) {
+        if(result.status === 201) {
             dispatch({
-                type: LOGOUT_USER,
+                type: LOGIN_USER,
                 payload: result.data.token
             })
         };
-        console.log('User logged in!');
+        return true;
     } catch (error) {
-        console.log(error);
+        return false;
     }
 
 };
@@ -49,11 +49,11 @@ export const loginUser = (body) => async dispatch => {
 export const loadUser = () => dispatch => {
     if(localStorage.token){
         setAuthToken(localStorage.token);
+        dispatch({
+            type: LOAD_USER
+        });
     }
 
-    dispatch({
-        type: LOAD_USER
-    });
 };
 
 export const logoutUser = () => dispatch => {

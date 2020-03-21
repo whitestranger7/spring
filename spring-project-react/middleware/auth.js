@@ -14,6 +14,7 @@ module.exports = function(req, res, next) {
         next();
     } catch (error) {
         res.status(401).send({ error: 'Token is not valid' });
+        localStorage.removeItem('token');
     }
 
 };

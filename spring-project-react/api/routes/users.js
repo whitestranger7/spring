@@ -16,9 +16,25 @@ router.post('/login', async (req, res) => {
                 password: user.password
             }
         });
-        
+
+        if(foundUser.length === 0) {
+            res.status(404).send({ error: 'Invalid Credentials' });
+        }
+
+        const id = foundUser.id;
+
+        jwt.sign(
+            { id },
+            'spring',
+            { expiresIn: 36000 },
+            (error, token) => {
+                if (error) res.status(400).send({ error: 'JWT Error' });
+                res.status(201).send({ token });
+            }
+        );
+
     } catch (error) {
-        res.send(404).send(error);
+        res.status(404).send(error);
     }
 
 });

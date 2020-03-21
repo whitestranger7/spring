@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 
 import './Login.scss';
@@ -24,28 +23,20 @@ const Login = ({ history, loginUser, isAuth }) => {
     const submitHandler = async e => {
         e.preventDefault();
 
-        // const body = JSON.stringify({
-        //     username,
-        //     password
-        // });
-
-        // try {
-        //     if (!isAuth) {
-        //         await loginUser(body);
-        //         history.push('/');
-        //     } else {
-        //         alert('User already loaded, please log out');
-        //     }
-        // } catch (err) {
-        //     console.log(err);
-        // }
+        const body = { username, password };
 
         try {
-            const result = await axios.post('/login', { username, password });
-            if(result.status === 202) {
-                history.push('/')
-            }else {
-                alert('Invalid data');
+            if (!isAuth) {
+                const result = await loginUser(body);
+                console.log(result);
+                if(!result){
+                    alert('Invalid Credentials')
+                }else {
+                    alert('User was logging in');
+                    history.push('/');
+                }
+            } else {
+                alert('User already loaded');
             }
         } catch (err) {
             console.error('Unable to authorize');
