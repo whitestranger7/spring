@@ -1,4 +1,5 @@
 const express = require('express');
+const auth = require('../../middleware/auth');
 
 const router = express.Router();
 
@@ -33,12 +34,12 @@ const projectsList = [
     }
 ];
 
-router.get('/list', (req, res) => {
+router.get('/list', auth, (req, res) => {
 
     if(req.query.search) {
         const matchItems = projectsList.filter(el => {
             return el.header.toLowerCase().includes(req.query.search.toLowerCase());
-        })
+        })  
         res.status(200).send(matchItems);
     }else {
         if (projectsList.length > 0) {

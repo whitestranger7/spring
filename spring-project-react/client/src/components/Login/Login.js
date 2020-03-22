@@ -28,7 +28,6 @@ const Login = ({ history, loginUser, isAuth }) => {
         try {
             if (!isAuth) {
                 const result = await loginUser(body);
-                console.log(result);
                 if(!result){
                     alert('Invalid Credentials')
                 }else {
@@ -42,8 +41,6 @@ const Login = ({ history, loginUser, isAuth }) => {
             console.error('Unable to authorize');
         }
     }
-
-    console.log(data);
 
     return (
         <form className='form__container' onSubmit={submitHandler}>

@@ -1,6 +1,6 @@
+import axios from 'axios';
 import { REGISTER_USER, LOGIN_USER, LOAD_USER, LOGOUT_USER } from './types';
 import setAuthToken from '../../utils/setAuthToken';
-import axios from 'axios';
 
 export const registerUser = (body) => async dispatch => {
 
@@ -59,5 +59,6 @@ export const loadUser = () => dispatch => {
 export const logoutUser = () => dispatch => {
     dispatch({
         type: LOGOUT_USER
-    })
+    });
+    window.location.reload();
 };

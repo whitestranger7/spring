@@ -8,6 +8,7 @@ import Button from '../../Button/Button';
 import { logoutUser } from '../../../store/actions/auth';
 
 const ButtonsBar = ({ isAuth, logoutUser }) => {
+
     return (
         <div className='buttons__bar'>
             <div className='buttons__wrapper'>
